@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SLYTHERIN — AMBITION HAS NO LIMIT</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            background: #020403;
+
+            color: #d8d8d8;
+
+            font-family:
+                "Times New Roman",
+                Georgia,
+                serif;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            height: 75px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 0 8%;
+
+            background: rgba(0, 0, 0, 0.92);
+
+            border-bottom: 1px solid #1c4d35;
+
+            z-index: 1000;
+        }
+
+
+        nav h1 {
+
+            color: #b9b9b9;
+
+            font-size: 25px;
+
+            letter-spacing: 6px;
+        }
+
+
+        nav h1 span {
+
+            color: #168044;
+        }
+
+
+        nav a {
+
+            color: #aaa;
+
+            text-decoration: none;
+
+            margin-left: 35px;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 13px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            transition: 0.3s;
+        }
+
+
+        nav a:hover {
+
+            color: #1ca35a;
+
+            text-shadow:
+                0 0 10px #1ca35a;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,0.98),
+                    rgba(0,20,12,0.75),
+                    rgba(0,0,0,0.98)
+                ),
+
+                url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=2000&q=80");
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 3px,
+                    rgba(0,255,120,0.015) 4px
+                );
+
+            pointer-events: none;
+        }
+
+
+        .hero-content {
+
+            width: 90%;
+
+            max-width: 1100px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .house {
+
+            font-family: Arial, sans-serif;
+
+            color: #168044;
+
+            font-size: 15px;
+
+            letter-spacing: 9px;
+
+            font-weight: bold;
+
+            margin-bottom: 25px;
+        }
+
+
+        .hero h2 {
+
+            font-size: clamp(65px, 11vw, 150px);
+
+            line-height: 0.85;
+
+            color: #e0e0e0;
+
+            letter-spacing: -5px;
+
+            text-transform: uppercase;
+
+            text-shadow:
+
+                5px 5px 0 #06150e,
+
+                0 0 30px rgba(0,255,120,0.2);
+        }
+
+
+        .hero h2 span {
+
+            color: #137842;
+        }
+
+
+        .line {
+
+            width: 180px;
+
+            height: 3px;
+
+            background: #137842;
+
+            margin: 40px 0;
+        }
+
+
+        .hero p {
+
+            max-width: 650px;
+
+            font-family: Arial, sans-serif;
+
+            color: #999;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .button {
+
+            display: inline-block;
+
+            margin-top: 40px;
+
+            padding: 18px 40px;
+
+            border: 1px solid #137842;
+
+            color: #d9d9d9;
+
+            text-decoration: none;
+
+            font-family: Arial, sans-serif;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition: 0.3s;
+        }
+
+
+        .button::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: -100%;
+
+            top: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background: #137842;
+
+            transition: 0.3s;
+
+            z-index: -1;
+        }
+
+
+        .button:hover::before {
+
+            left: 0;
+        }
+
+
+        .button:hover {
+
+            color: #000;
+
+            box-shadow:
+                0 0 25px rgba(19,120,66,0.5);
+        }
+
+
+        /* =========================
+           DARK SECTION
+        ========================= */
+
+        section {
+
+            padding: 120px 8%;
+        }
+
+
+        .section-title {
+
+            font-size: 55px;
+
+            color: #d7d7d7;
+
+            text-transform: uppercase;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .section-title span {
+
+            color: #137842;
+        }
+
+
+        .section-line {
+
+            width: 100%;
+
+            height: 1px;
+
+            background: #193a29;
+
+            margin-bottom: 60px;
+        }
+
+
+        /* =========================
+           MENTALITY
+        ========================= */
+
+        .mentality {
+
+            background:
+
+                linear-gradient(
+                    rgba(0,10,6,0.97),
+                    rgba(1,5,3,0.97)
+                );
+        }
+
+
+        .mentality-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 2px;
+
+            background: #1b3024;
+        }
+
+
+        .mindset {
+
+            min-height: 300px;
+
+            padding: 45px;
+
+            background: #050806;
+
+            position: relative;
+
+            transition: 0.4s;
+        }
+
+
+        .mindset:hover {
+
+            background: #09150e;
+
+            transform:
+                translateY(-8px);
+        }
+
+
+        .number {
+
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+
+            color: #137842;
+
+            letter-spacing: 3px;
+        }
+
+
+        .mindset h3 {
+
+            margin-top: 35px;
+
+            font-size: 30px;
+
+            color: #ddd;
+
+            text-transform: uppercase;
+        }
+
+
+        .mindset p {
+
+            margin-top: 20px;
+
+            font-family: Arial, sans-serif;
+
+            color: #777;
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           QUOTE
+        ========================= */
+
+        .quote {
+
+            min-height: 70vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            background:
+
+                linear-gradient(
+                    rgba(0,0,0,0.85),
+                    rgba(0,15,9,0.95)
+                );
+        }
+
+
+        .quote-content {
+
+            max-width: 1000px;
+        }
+
+
+        .quote-mark {
+
+            font-size: 100px;
+
+            color: #137842;
+
+            line-height: 0.5;
+        }
+
+
+        .quote h2 {
+
+            font-size:
+                clamp(35px, 6vw, 75px);
+
+            text-transform: uppercase;
+
+            line-height: 1.1;
+
+            color: #ddd;
+
+            margin: 40px 0;
+        }
+
+
+        .quote h2 span {
+
+            color: #137842;
+        }
+
+
+        .quote p {
+
+            font-family: Arial, sans-serif;
+
+            color: #666;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================
+           CODE
+        ========================= */
+
+        .code-section {
+
+            background: #030504;
+        }
+
+
+        .code {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            border-left: 3px solid #137842;
+
+            padding: 40px;
+
+            background: #070b08;
+
+            box-shadow:
+                20px 20px 0 #020302;
+        }
+
+
+        .code p {
+
+            font-family: Arial, sans-serif;
+
+            color: #999;
+
+            font-size: 17px;
+
+            line-height: 2;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+
+        .code strong {
+
+            color: #ddd;
+        }
+
+
+        .code .green {
+
+            color: #168044;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            padding: 50px 8%;
+
+            background: #010201;
+
+            border-top: 1px solid #14271c;
+
+            text-align: center;
+        }
+
+
+        footer h2 {
+
+            color: #168044;
+
+            letter-spacing: 8px;
+
+            font-size: 20px;
+        }
+
+
+        footer p {
+
+            margin-top: 15px;
+
+            color: #444;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width: 800px) {
+
+            nav {
+
+                padding: 0 5%;
+            }
+
+            nav a {
+
+                margin-left: 10px;
+
+                font-size: 10px;
+            }
+
+            .mentality-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            section {
+
+                padding: 80px 6%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <h1>
+            <span>S</span>LYTHERIN
+        </h1>
+
+        <div>
+
+            <a href="#mindset">
+                Mindset
+            </a>
+
+            <a href="#code">
+                Code
+            </a>
+
+            <a href="#oath">
+                Oath
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="house">
+                HOUSE OF SLYTHERIN
+            </div>
+
+            <h2>
+                <span>AMBITION.</span><br>
+                POWER.
+            </h2>
+
+            <div class="line"></div>
+
+            <p>
+
+                You were not built to follow.
+                You were built to rise.
+
+                Discipline over comfort.
+                Strategy over impulse.
+                Results over excuses.
+
+            </p>
+
+            <a href="#mindset" class="button">
+                Enter the House
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- MINDSET -->
+
+    <section class="mentality" id="mindset">
+
+        <div class="section-title">
+
+            THE <span>MINDSET</span>
+
+        </div>
+
+        <div class="section-line"></div>
+
+
+        <div class="mentality-grid">
+
+
+            <div class="mindset">
+
+                <div class="number">
+                    01 / AMBITION
+                </div>
+
+                <h3>
+                    Want More.
+                </h3>
+
+                <p>
+
+                    Never apologize for wanting
+                    more from yourself.
+
+                    Set the standard higher.
+                    Then become the person capable
+                    of reaching it.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="mindset">
+
+                <div class="number">
+                    02 / DISCIPLINE
+                </div>
+
+                <h3>
+                    No Excuses.
+                </h3>
+
+                <p>
+
+                    Motivation disappears.
+
+                    Discipline remains.
+
+                    Work when nobody watches.
+                    Improve when nobody applauds.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="mindset">
+
+                <div class="number">
+                    03 / STRATEGY
+                </div>
+
+                <h3>
+                    Think Ahead.
+                </h3>
+
+                <p>
+
+                    Do not rush.
+
+                    Observe.
+                    Calculate.
+                    Execute.
+
+                    Let everyone else react.
+                    You already planned your move.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="mindset">
+
+                <div class="number">
+                    04 / CONTROL
+                </div>
+
+                <h3>
+                    Master Yourself.
+                </h3>
+
+                <p>
+
+                    Control your emotions.
+                    Control your attention.
+                    Control your actions.
+
+                    The strongest person in the room
+                    is often the quietest.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="mindset">
+
+                <div class="number">
+                    05 / RESILIENCE
+                </div>
+
+                <h3>
+                    Rise Again.
+                </h3>
+
+                <p>
+
+                    Failure is information.
+
+                    Pain is temporary.
+
+                    Get up.
+                    Adapt.
+                    Return stronger.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="mindset">
+
+                <div class="number">
+                    06 / RESULTS
+                </div>
+
+                <h3>
+                    Prove It.
+                </h3>
+
+                <p>
+
+                    Do not explain what you
+                    are capable of.
+
+                    Let the result speak.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- QUOTE -->
+
+    <section class="quote" id="oath">
+
+        <div class="quote-content">
+
+            <div class="quote-mark">
+                "
+            </div>
+
+            <h2>
+
+                <span>THE WORLD</span>
+                DOES NOT REWARD
+                POTENTIAL.
+
+                IT REWARDS
+                <span>EXECUTION.</span>
+
+            </h2>
+
+            <p>
+                Ambition without discipline is nothing.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CODE -->
+
+    <section class="code-section" id="code">
+
+        <div class="section-title">
+
+            THE <span>CODE</span>
+
+        </div>
+
+        <div class="section-line"></div>
+
+
+        <div class="code">
+
+            <p>
+                <strong>01.</strong>
+                Never wait for permission.
+            </p>
+
+            <p>
+                <strong>02.</strong>
+                Never confuse comfort with progress.
+            </p>
+
+            <p>
+                <strong>03.</strong>
+                Never reveal every move.
+            </p>
+
+            <p>
+                <strong>04.</strong>
+                Never let failure define you.
+            </p>
+
+            <p>
+                <strong>05.</strong>
+                Never stop sharpening your mind.
+            </p>
+
+            <p>
+                <strong>06.</strong>
+                Never lower the standard.
+            </p>
+
+            <p>
+                <strong class="green">07.</strong>
+                <strong>Become difficult to defeat.</strong>
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h2>
+            SLYTHERIN
+        </h2>
+
+        <p>
+            Ambition • Discipline • Strategy • Power
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
